@@ -134,6 +134,7 @@ li a img{
     z-index: -1111111111111;
 }
 .filter:hover{
+    transform: scale(0.5);
     opacity: 1;
     cursor: pointer;
 }
