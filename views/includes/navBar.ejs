@@ -1,0 +1,34 @@
+<div class="head">
+    <div class="logo">
+        <a href="/listings"><img src="/logo.png" alt="Website Logo">Wanderer</a>
+    </div>
+
+    <div class="navbar-nav">
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search Destination" aria-label="Search">
+            <button class="btn btn-outline-success container-fluid w-50" type="submit">Search</button>
+          </form>
+    </div>
+    <nav class="navigation">
+        <form action="/listings/new" method="get" class="button_form">
+            <button type="submit" class="new">Host with Wanderer</button>
+        </form>
+        <%if(!currUser){%>
+        <button class="user_entry">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-circle-user"></i>
+        </button>
+        <%}%>
+        <% if(currUser){ %>
+            <a href="/logout" class="logoutLink">
+                <button class="user_entry">
+                    LogOut
+                </button>
+            </a>
+        <%}%>
+    </nav>
+</div>
+<div class="box-appear">
+    <a href="/signup"><button class="user-in">Sign Up</button></a>
+    <a href="/login"><button class="user-in" id="log-in">Log In</button></a>
+</div>

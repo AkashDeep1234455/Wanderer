@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/signup.css">
+    <title>Wanderer</title>
+</head>
+<body>
+    <%- include("../flash/flash.ejs") -%>
+    <div class="form">
+        <form action="/signup" method="post" class="signupform" novalidate>
+            <h3>SignUp</h3>
+            <div>
+                <label for="username" class="form-label">Username</label>
+                <input name="username" id="username" class="form-control" required>
+                <div id="invalid-entry1">Please Enter your username</div>
+            </div>
+            <div>
+                <label for="email" class="form-label">Email</label>
+                <input name="email" id="email" class="form-control" required >
+                <div id="invalid-entry2">Plese Enter your email</div>
+            </div>
+            <div>
+                <label for="password" class="form-label">Password</label>
+                <input name="password" id="password" class="form-control" required >
+                <div id="invalid-entry3">Plese Enter Password</div>
+            </div>
+            <button type="submit" class="submit-button">Register</button>
+            <p>Already a member?<a href="/login">Login</a></p>
+        </form>
+    </div>
+
+    <script src="/Js/signupValidate.js"></script>
+</body>
+</html>

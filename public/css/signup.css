@@ -1,0 +1,137 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    overflow: hidden;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.form{
+    height: 80%;
+    width: 29%;
+    border: 2px solid black;
+    transition: all 0.2s linear;
+}
+.signupform{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signupform h3{
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+.signupform div{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-bottom: 2rem;
+    height: fit-content;
+}
+.signupform div input{
+    border: none;
+    border-bottom: 1px solid black;
+    height: 2rem;
+    background-color: white;
+}
+.signupform div input:focus{
+    outline: none;
+    background-color: white;
+}
+#password{
+    margin-bottom: 0.3rem;
+}
+.signupform button{
+    margin-top: 0.8rem;
+    width: 70%;
+    height: 2.3rem;
+    color: white;
+    background-color: rgb(40, 36, 36);
+}
+.signupform button:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.form:hover{
+    box-shadow: 4px 4px 20px gray;
+    border: none;
+}
+.signupform div div{
+    color: red;
+    display: none;
+    margin: 0px;
+}
+.signupform div input:-webkit-autofill,
+.signupform div input:-webkit-autofill:focus {
+    -webkit-text-fill-color: inherit;
+    transition: background-color 5000s ease-in-out 0s; /* Adjust the transition time */
+}
+.success{
+    position: absolute;
+    top: 0%;
+    left: 37%;
+    width: fit-content;
+    height: 8rem;
+    background-color: white;
+    border-radius: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 10px gray;
+    animation: drop-down 0.5s linear 0s 1 ;
+}
+.success h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+}
+.success button{
+    width: 6rem;
+    height: 2rem;
+    background-color: green;
+    border-radius: 0.4rem;
+    border: none;
+    color: white;
+    margin-top: 0.5rem;
+}
+.success button:hover{
+    background-color: white;
+    border: 1.5px solid black;
+    color: black;
+    cursor: pointer;
+}
+.goUp{
+    animation: go-up 0.5s linear 0s 1;
+}
+@keyframes drop-down {
+    0%{
+        top: -30%;
+    }
+    100%{
+        top: 0%;
+    }
+}
+@keyframes go-up{
+    0%{
+        top: 0%;
+    }
+    100%{
+        top: -30%;
+    }
+}

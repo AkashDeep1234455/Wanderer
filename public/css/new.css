@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    overflow: hidden;
+}
+h3{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+.needs-validation{
+    height: 90vh;
+    width: 35vw;
+    border-radius: 1rem;
+    background-color: rgb(235, 229, 229);
+    padding: 3rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    overflow: hidden;
+}
+.form div{
+    display: flex;
+    flex-direction: column;
+}
+.form-label{
+    margin-bottom: 0.5rem;
+}
+.form-control{
+    margin-bottom: 1rem;
+    height: 2rem;
+    border-radius: 0.4rem;
+    border: 1px solid black;
+}
+#title{
+    border: 1px solid black;
+}
+#description{
+    height: 4rem;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+#image{
+    border-radius: 0px;
+    height: 2.3rem;
+    background-color: rgb(235, 229, 229);
+}
+#image:hover{
+    cursor: pointer;
+}
+#price{
+    width: 6rem;
+    border: 1px solid black;
+}
+#location{
+    
+    margin-bottom: 2rem;
+    border: 1px solid black;
+}
+#country{
+    width: 10rem;
+    border: 1px solid black;
+}
+.form-submit{
+    width: 7rem;
+    height: 2rem;
+    transition: all 0.2s linear;
+    z-index: 1;
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+}
+.form-submit:hover{
+    outline: 1px solid #0c0d13;
+    outline-offset: 4px;
+    cursor: pointer;
+    background-color: rgb(235, 229, 229);
+    color: black;
+}
+#price-country{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+

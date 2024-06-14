@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+.lineBox{
+width: 100%;
+height: fit-content;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.line{
+    width: 80%;
+    margin-top: 5rem;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    bottom: 0px;
+    width: 100vw;
+    height: 14rem;
+    display: flex;
+    align-items: flex-end; /* Align child elements to the bottom of the footer */
+    justify-content: space-between;
+}
+.f-info{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 0.8rem;
+}
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 30rem;
+    margin-left: 2rem;
+    flex-wrap: wrap;
+}
+.private{
+    color: rgb(104, 85, 85);
+}
+.f-info-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 17rem;
+    flex-wrap: wrap;
+}
+.f-info-links a{
+    text-decoration: none;
+    color: rgb(151, 134, 134);
+    justify-content: space-between;
+}
+.f-info-links a:hover{
+    cursor: pointer;
+    color: rgb(67, 63, 63);
+}
+.f-info-social{
+    width: 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 3rem;
+    font-size:x-large;
+    flex-wrap: wrap;
+    margin-right: 3rem;
+}
+.f-info-social a{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.f-info-social:hover{
+    cursor: pointer;
+}
+
+.fa-linkedin:hover{
+    transform: scale(1.2);
+}
+
+.fa-github-square:hover{
+    transform: scale(1.2);
+}
+
+.fa-instagram-square:hover{
+    transform: scale(1.2);
+}

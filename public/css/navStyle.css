@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+   
+}
+.head{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    height: 5rem;
+    justify-content: space-between;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    align-items: center;
+    overflow: hidden;
+}
+.logo a{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: red;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.logo img{
+    width: 4.5rem;
+}
+.navigation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 22rem;
+    height: 5rem;
+}
+.button_form{
+    width: 10rem;
+    padding-right: 2rem;
+    z-index: 2;
+}
+.new{
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 2.1rem;
+    background-color: white;
+    border: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+.new:hover{
+    cursor: pointer;
+    background-color:  rgb(230, 229, 229);;
+}
+.navigation .user_entry{
+    width: 5rem;
+    border-radius: 2rem;
+    border: 1px solid rgb(214, 204, 204);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    margin-left: 2rem;
+    height: 2.5rem;
+}
+.user_entry:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 6px gray;
+}
+.fa-bars{
+    font-size: 1rem;
+    padding-left: 0.5rem;
+}
+.fa-circle-user{
+    font-size: 1.5rem;
+}
+.box-appear{
+    background-color: white;
+    z-index: 100;
+    width: 17rem;
+    height: 6rem;
+    box-shadow: 4px 4px 20px lightgray;
+    border-radius: 1rem;
+    position: fixed;
+    right: 5rem;
+    top: 4rem;
+    display: none;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+   
+}
+.box-appear a{
+    overflow: hidden;
+    text-decoration: none;
+}
+.user-in{
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    height: 2.7rem;
+    width: 100%;
+    border: none;
+    background-color: white;
+}
+#log-in{
+    opacity: 0.8;
+}
+.user-in:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+.navigation .logout{
+    display: none;
+}
+.navigation .logoutLink{
+    text-decoration: none;
+    margin-right: 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 0.3rem;
+}

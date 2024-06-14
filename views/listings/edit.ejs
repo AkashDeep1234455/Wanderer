@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/css/navStyle.css">
+    <link rel="stylesheet" href="/css/footerStyle.css">
+    <link rel="stylesheet" href="/css/edit.css">
+    <title><%=title%></title>
+</head>
+<body>
+    <header>
+</header>
+    <div class="body">
+    <h2>Edit Your Listing</h2>
+    <form action="/listings/<%=listing.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="main-form" >
+        <label for="title" class="form-label">Title</label>
+        <input name="title" id="title" value="<%=title%>" class="form-action">
+        <label for="description" class="form-label">Description</label>
+        <textarea name="description" id="description" class="form-action"><%=listing.description%></textarea>
+        <div class="uploaded-image">
+            <img src="data:image/png;base64, <%= listing.image.data.toString('base64') %>" alt="property image">
+        </div>
+        <label for="file" class="form-label">Image</label>
+        <input type="file" name="image" accept="image/*" id="image">
+        <div class="price-country">
+            <div class="box1">
+        <label for="price" class="form-label">Price</label>
+        <input name="price" id="price" value="<%=listing.price%>" class="form-action">
+        </div>
+        <div class="box1">
+        <label for="country" class="form-label">Country</label>
+        <input name="country" id="country" value="<%=listing.country%>" class="form-action">
+        </div>
+        </div>
+        <label for="location" class="form-label">Location</label>
+        <input name="location" id="location" value="<%=listing.location%>" class="form-action">
+        <button class="edit-button">Edit</button>
+    </form>
+    </div>
+    <%- include("../includes/footer.ejs")-%>
+    <script src="/Js/box-appear.js"></script>
+</body>
+</html>

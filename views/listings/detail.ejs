@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/css/navStyle.css">
+    <link rel="stylesheet" href="/css/footerStyle.css">
+    <link rel="stylesheet" href="/css/edit.css">
+    <link rel="stylesheet" href="/css/detail.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
+    <title><%=title%></title>
+</head>
+<body>
+    <script>
+    let maptoken = "<%=process.env.MAP_TOKEN%>";
+    const coordinates = <%-JSON.stringify(listing.geometry.coordinates)%>;
+    </script>
+    <header>
+        <%- include("../includes/navBar.ejs")-%>
+    </header>
+    <%- include("../flash/flash.ejs") -%>
+    <div class="main-body">
+    <div class="card">
+    <ul>
+        <li class="title"><%=listing.title%></li>
+        <li><img src="data:image/png;base64, <%= listing.image.data.toString('base64') %>" alt="property image"></li>
+        <li class="description"><%=listing.description%></li>
+        <li class="price">&#8377;<%=listing.price.toLocaleString("en-IN")%></li>
+        <li class="country"><%=listing.country%></li>
+        <li class="location"><%=listing.location%></li>
+    </ul>
+    <% if(currUser && currUser._id.equals(listing.owner.id)){ %>
+    <div class="buttons">
+    <a href="/listings/<%=listing.id%>/edit" class="edit-link"><button class="edit">Edit</button></a>
+    <form action="/listings/<%=listing.id%>?_method=DELETE" method="post" class="delete-form"><button class="delete">DELETE</button></form>
+    </div>
+    <%}%>
+
+   
+    <div class="review">
+        <% if(currUser){ %>
+            <hr class="reviewLine">
+        <h4>Leave a Review</h4>
+        <form action="/listings/<%=listing.id%>/reviews" class="review-form" method="post" novalidate>
+            <div class="rating-box">
+            <div>
+                <label for="rating">Rating</label>
+                <input type="range" min="1" max="5" name="review[rating]" id="rating" value="1">
+            </div>
+            <div id="stars">
+                <i class="fa-solid fa-star star-glow"></i>
+                <i class="fa-solid fa-star star-glow"></i>
+                <i class="fa-solid fa-star star-glow" ></i>
+                <i class="fa-solid fa-star star-glow" ></i>
+                <i class="fa-solid fa-star star-glow" ></i>
+            </div>
+        </div>
+            <div>
+                <label for="comment">Leave us some comment</label>
+                <textarea name="review[comment]" id="comment" required minlength="10"></textarea>
+                <div id="invalid-entry1">Please add some comment</div>
+                <div id="invalid-entry2">Comment length should me more than 10 characters</div>
+            </div>
+            <button type="submit" class="comment-submit-button">Submit</button>
+        </form>
+        <%}%>
+        <% if(listing.reviews.length){ %>
+            <hr>
+        <div class="for-review">
+        <h4 class="review-start">All Reviews</h4>
+        <div class="show-review">
+        <%for(let i=0;i<listing.reviews.length;i++){%>
+            <div class="review-box">
+            <p>
+                <div id="reviewOwner"><%= listing.reviews[i].owner.username %></div>
+                <div id="show-stars-<%=i%>" data-rating="<%=listing.reviews[i].rating%>" class="show-stars">
+                    <i class="fa-solid fa-star star-glow"></i>
+                    <i class="fa-solid fa-star star-glow"></i>
+                    <i class="fa-solid fa-star star-glow" ></i>
+                    <i class="fa-solid fa-star star-glow" ></i>
+                    <i class="fa-solid fa-star star-glow" ></i>
+                </div>
+            </p>
+            <p class="review-comment"><%=listing.reviews[i].comment%></p>
+            <% if(currUser && currUser._id.equals(listing.reviews[i].owner._id)){ %>
+            <form method="post" action="/listings/<%=listing.id%>/reviews/<%=listing.reviews[i].id%>"> <button class="review-delete">Delete</button></form>
+            <%}%>
+            </div>
+        <%}%>
+        </div>
+        <% } %>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div id="mapView">
+        <h2>where you will be</h2>
+        <div id="map">
+            
+        </div>
+    </div>
+    <%- include("../includes/footer.ejs")-%>
+    <script src="/Js/box-appear.js"></script>
+    <script src="/Js/review.js"></script>
+    <script src="/Js/map.js"></script>
+
+
+
+</body>
+</html>
