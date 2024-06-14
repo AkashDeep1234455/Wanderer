@@ -131,10 +131,8 @@ li a img{
     flex-direction: column;
     gap: 0.6rem;
     opacity: 0.6;
-    z-index: -1111111111111;
 }
 .filter:hover{
-    transform: scale(0.5);
     opacity: 1;
     cursor: pointer;
 }
